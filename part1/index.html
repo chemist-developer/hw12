@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>lesson13</title>
+</head>
+<body>
+    <script>
+        arr=[1, 2, 3, [4, 5, 6]];
+        document.body.append(generateList(arr));
+        function generateList(array){
+            const ul= document.createElement('ul');
+            array.forEach(element => {
+                const li= document.createElement('li');
+                ul.append(li);
+                if(Array.isArray(element)){
+                    li.append(generateList(element))
+                }else{
+                    li.textContent= element;
+                }
+                
+            });
+            return ul;
+          
+          
+  
+        }
+      </script>
+    
+</body>
+</html>

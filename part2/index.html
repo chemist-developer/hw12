@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>lesson13</title>
+</head>
+<body>
+    <div class="result">
+
+    </div>
+
+    <script>
+        "use strict";
+        
+        document.querySelector('.result').append(generateTable(10, 10));
+        function generateTable(row, column){
+          let count = 1;
+          const $table= document.createElement('table');
+          for(let i = 0; i < row; i++){
+              let $tr= document.createElement('tr');
+              for(let j = 0; j < column; j++){
+                  let $td= document.createElement('td');
+                  $td.textContent= count++;
+                  $tr.append($td);
+              }
+              $table.append($tr);
+          }
+          return $table;
+      }
+    </script>
+    
+</body>
+</html>
